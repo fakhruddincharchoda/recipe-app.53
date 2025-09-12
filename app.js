@@ -21,15 +21,14 @@ console.log(DB);
 mongoose.connect(DB).then((con) => {
   console.log("Db connection sucessful⭐");
 });
-app.use(cors({ origin: "http://localhost:3000" }));
 
-// app.use(
-//   cors({
-//     origin: "https://recipe-app53.netlify.app", // your frontend URL
-//     methods: ["GET", "POST", "DELETE"],
-//     credentials: true,
-//   })
-// );
+app.use(
+  cors({
+    origin: "https://recipe-app53.netlify.app", // your frontend URL
+    methods: ["GET", "POST", "DELETE"],
+    credentials: true,
+  })
+);
 // ********* Bookmark routes ********
 router.get("/recipe/get/bookmarks", getBookmark);
 // DELETE with URL param
