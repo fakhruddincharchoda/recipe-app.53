@@ -25,8 +25,6 @@ mongoose.connect(DB).then((con) => {
 app.use(
   cors({
     origin: "https://recipe-app53.netlify.app", // your frontend URL
-    methods: ["GET", "POST", "DELETE"],
-    credentials: true,
   })
 );
 // ********* Bookmark routes ********
