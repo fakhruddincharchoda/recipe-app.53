@@ -1,13 +1,11 @@
 const mongoose = require("mongoose");
 const bookmarkSchema = new mongoose.Schema({
-  id: {
+  recipeId: {
     type: String,
-    unique: true,
     required: [true, "A recipe must have id"],
   },
   title: {
     type: String,
-    unique: true,
     required: [true, "A recipe must have title"],
   },
   publisher: {
@@ -28,6 +26,11 @@ const bookmarkSchema = new mongoose.Schema({
   image_url: {
     type: String,
     required: [true, "require Image"],
+  },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: [true, "A user is must required"],
   },
 });
 const Bookmark = mongoose.model("Bookmark", bookmarkSchema);
